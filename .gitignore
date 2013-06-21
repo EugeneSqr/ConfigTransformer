@@ -1,0 +1,5 @@
+ConfigTransformer.suo
+packages/
+_ReSharper.ConfigTransformer/
+ConfigTransformer/bin/
+ConfigTransformer/obj/
