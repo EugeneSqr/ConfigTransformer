@@ -71,10 +71,10 @@ namespace ConfigTransformer
                 string config = configs[i];
                 string transformation = configs[i + 1];
                 var regex = new Regex(BuildSearchPattern(config.Remove(config.Length - 7, 7)), RegexOptions.IgnoreCase);
-                Match match = regex.Match(transformation);
                 bool found = false;
-                while (match.Success)
+                while (regex.IsMatch(transformation))
                 {
+                    Match match = regex.Match(transformation);
                     if (IsTransformationFound(match) && !found)
                     {
                         found = true;
@@ -96,7 +96,14 @@ namespace ConfigTransformer
                     }
 
                     i++;
-                    match = regex.Match(configs[i + 1]);
+                    if (i < configs.Length - 1)
+                    {
+                        transformation = configs[i + 1];
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
 
                 i++;

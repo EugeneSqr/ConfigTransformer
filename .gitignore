@@ -3,3 +3,4 @@ packages/
 _ReSharper.ConfigTransformer/
 ConfigTransformer/bin/
 ConfigTransformer/obj/
+ConfigTransformer/ConfigTransformer.csproj.user
